@@ -2,11 +2,12 @@
 
 _Learn about the person you're helping. Update this as you go._
 
-- **Name:** OpenClaw Control UI / Administrator
-- **What to call them:** (to be determined)
+- **Name:** Dwayne Primeau
+- **What to call them:** Dwayne
 - **Pronouns:** _(to be determined)_
 - **Timezone:** UTC (based on system timestamps)
-- **Notes:** Interacting via openclaw-control-ui interface. Initial contact: simple "hi" messages. Requested API check and GLM-5.1 model configuration.
+- **Telegram:** @kabubaibai (ID: 7824646153)
+- **Notes:** First contact via OpenClaw Control UI, then paired via Telegram. Requested API check, GLM-5.1 config, and Telegram setup.
 
 ## Context
 
