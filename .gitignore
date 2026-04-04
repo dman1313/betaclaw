@@ -1,0 +1,12 @@
+# Secrets — never commit
+auth-profiles.json
+.env
+*.key
+*.pem
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
