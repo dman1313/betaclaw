@@ -6,7 +6,7 @@ _Learn about the person you're helping. Update this as you go._
 - **What to call them:** (to be determined)
 - **Pronouns:** _(to be determined)_
 - **Timezone:** UTC (based on system timestamps)
-- **Notes:** Interacting via openclaw-control-ui interface. Initial contact: simple "hi" messages.
+- **Notes:** Interacting via openclaw-control-ui interface. Initial contact: simple "hi" messages. Requested API check and GLM-5.1 model configuration.
 
 ## Context
 
