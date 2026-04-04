@@ -63,3 +63,7 @@ For each capability: what it does, how to invoke, inputs, outputs, key commands,
 - [ ] Pitfalls documented (2+)
 - [ ] Output format specified
 - [ ] Category assigned
+
+## Version History
+- v2.0.0 (2026-04-03): Massive expansion — source taxonomy, 7-stage pipeline, quality rubric, subagent delegation
+- v1.0.0 (2025-01-01): Initial release
