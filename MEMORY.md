@@ -24,5 +24,11 @@ _Curated wisdom. Updated regularly from daily logs._
 _(None yet — waiting for Dwayne to share)_
 
 ## Key Decisions
-- Skipped MetaClaw install — adopted the good ideas (auto-skill extraction, structured memory, failure journal) as native habits instead
+- Skipped MetaClaw install — adopted good ideas natively instead
 - GLM-5.1 over GLM-4.7 as primary — Dwayne's explicit request
+
+## Skills Built
+- Cloner — external research → production skills
+- Workflow Templates — composable pipelines (from Lobster)
+- Newsletter & Social Media Pipeline — full comms production workflow
+- End-of-Session Review — auto-extract skills after productive chats
