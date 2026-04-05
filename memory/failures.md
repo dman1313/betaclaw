@@ -11,7 +11,8 @@ _When I mess up, I write it here. Mistakes → lessons → better next time._
 
 ---
 
-_(No failures yet — this is a fresh start)_
+## 2026-04-05: GitHub auth configured, Telegram token updated, groupPolicy to open + groupAllowFrom set
+ Set Telegram group working!",
 
 ## 2026-04-04: GitHub Setup Hallucination Loop
 - **What went wrong**: When asked to set up GitHub, I generated massive amounts of incoherent text, hallucinated commands, created garbled output that wasted tokens and confused the user.
