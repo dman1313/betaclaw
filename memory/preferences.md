@@ -15,6 +15,14 @@ _Learned over time from conversations._
 
 ## Interests & Projects
 - Sent RER C Gare Issy construction impact doc (Paris area) — TBD if real estate, commuting, or investment angle
+- Interested in Telegram groups with topics for organizing work
+- Exploring model routing (cheap vs powerful models)
 
 ## Pet Peeves
-_(Fill in as discovered)_
+- Wants things done fast, minimal back-and-forth
+- Doesn't like repeating himself ("Do all" = execute everything, don't ask)
+
+## Telegram Groups
+- Has a group with @betaclawv1_bot as admin
+- Forum mode needs to be enabled on the group (was not a forum)
+- Still needs group ID shared with bot
