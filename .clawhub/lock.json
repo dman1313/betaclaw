@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "skills": {
+    "self-improving": {
+      "version": "1.2.16",
+      "installedAt": 1775419395808
+    },
+    "clawdhub": {
+      "version": "1.0.0",
+      "installedAt": 1775419513366
+    },
+    "multi-search-engine": {
+      "version": "2.0.1",
+      "installedAt": 1775419531835
+    },
+    "humanizer": {
+      "version": "1.0.0",
+      "installedAt": 1775419540097
+    },
+    "moltstreet": {
+      "version": "1.8.2",
+      "installedAt": 1775419638220
+    },
+    "moltstreet-news": {
+      "version": "1.0.1",
+      "installedAt": 1775419665904
+    },
+    "self-improving-agent": {
+      "version": "3.0.13",
+      "installedAt": 1775419691891
+    },
+    "github": {
+      "version": "1.0.0",
+      "installedAt": 1775419754554
+    },
+    "gog": {
+      "version": "1.0.0",
+      "installedAt": 1775419891613
+    },
+    "openclaw-auto-dream": {
+      "version": "4.0.3",
+      "installedAt": 1775425080643
+    },
+    "inner-life-dream": {
+      "version": "1.0.6",
+      "installedAt": 1775425085133
+    },
+    "dream-cycle": {
+      "version": "1.0.1",
+      "installedAt": 1775425089660
+    },
+    "agent-dream": {
+      "version": "1.0.6",
+      "installedAt": 1775425094200
+    },
+    "dream-journal": {
+      "version": "1.0.0",
+      "installedAt": 1775425098714
+    },
+    "dream-maker": {
+      "version": "2.0.0",
+      "installedAt": 1775425103143
+    },
+    "dream-talking-image": {
+      "version": "1.0.1",
+      "installedAt": 1775425107631
+    },
+    "memory-dream": {
+      "version": "1.0.3",
+      "installedAt": 1775425112106
+    },
+    "openclaw-memory-dream": {
+      "version": "1.1.0",
+      "installedAt": 1775425117275
+    },
+    "dream-rem": {
+      "version": "2.0.2",
+      "installedAt": 1775425121659
+    }
+  }
+}

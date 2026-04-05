@@ -24,6 +24,8 @@ _Curated wisdom. Updated regularly from daily logs._
 - **News Pipeline**: Real-time web monitoring via Firehose API → Telegram group topics. Waiting on API keys.
 
 ## Key Decisions
+- "Dream" / "Dream time" = trigger DREAM v2 nightly reflection cycle — always, no exceptions
+- DREAM skill lives at skills/dream/SKILL.md
 - Skipped MetaClaw install — adopted good ideas natively instead
 - GLM-5.1 over GLM-4.7 as primary — Dwayne's explicit request
 
