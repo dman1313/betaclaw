@@ -23,6 +23,12 @@ _Learned over time from conversations._
 - Doesn't like repeating himself ("Do all" = execute everything, don't ask)
 
 ## Telegram Groups
+- Group: "Dwayne & Betaclaw" (-1003842503877)
+- Forum mode enabled, topics working
+- Topic "News & Events" (thread ID 8) — for news delivery
+- Bot is admin in group
+
+## Telegram Groups
 - Has a group with @betaclawv1_bot as admin
 - Forum mode needs to be enabled on the group (was not a forum)
 - Still needs group ID shared with bot

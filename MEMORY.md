@@ -32,3 +32,14 @@ _(None yet — waiting for Dwayne to share)_
 - Workflow Templates — composable pipelines (from Lobster)
 - Newsletter & Social Media Pipeline — full comms production workflow
 - End-of-Session Review — auto-extract skills after productive chats
+- Firehose API — real-time web monitoring via Lucene queries + SSE
+
+## Telegram Groups
+- "Dwayne & Betaclaw" (-1003842503877) — forum mode, topics working
+- "News & Events" topic (thread 8) — for news delivery
+- Bot is admin, can create/manage topics
+
+## News Setup
+- Firehose API skill created — waiting for API keys to activate
+- Pre-built rules ready: Tech, Finance, Crypto, AI, World News
+- Will deliver real-time to Telegram group topic
