@@ -21,7 +21,7 @@ _Curated wisdom. Updated regularly from daily logs._
 - Config edits directly to openclaw.json work when gateway config.patch fails due to pairing issues
 
 ## Active Projects
-_(None yet — waiting for Dwayne to share)_
+- **News Pipeline**: Real-time web monitoring via Firehose API → Telegram group topics. Waiting on API keys.
 
 ## Key Decisions
 - Skipped MetaClaw install — adopted good ideas natively instead
@@ -32,6 +32,7 @@ _(None yet — waiting for Dwayne to share)_
 - Workflow Templates — composable pipelines (from Lobster)
 - Newsletter & Social Media Pipeline — full comms production workflow
 - End-of-Session Review — auto-extract skills after productive chats
+- Firehose API — real-time web monitoring via Lucene queries + SSE streaming
 - Firehose API — real-time web monitoring via Lucene queries + SSE
 
 ## Telegram Groups
