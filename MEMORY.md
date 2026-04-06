@@ -19,9 +19,11 @@ _Curated wisdom. Updated regularly from daily logs._
 - GLM-5.1 returns reasoning_content before final content — normal behavior for reasoning models
 - Telegram token was accidentally set to Zai API key — fixed with real bot token from BotFather
 - Config edits directly to openclaw.json work when gateway config.patch fails due to pairing issues
+- **Multiple gateway instances = 409 getUpdates conflict** — always kill duplicates before restarting. The container's start_gateway.sh loop can spawn extra instances if killed improperly.
 
 ## Active Projects
-- **News Pipeline**: Real-time web monitoring via Firehose API → Telegram group topics. Waiting on API keys.
+- **News Pipeline**: Real-time web monitoring via Firehose API → Telegram group topics. Management key added, tap "Dwayne News Feed" created (ID: 607d826e-2c7e-443a-a649-acf7f698f3f1). 5 rules active (tech, finance, crypto, ai, world). Stream tested, waiting for matches.
+- **Trading Setup**: TradingAgents v0.2.3 installed, dependencies ready. Day Trader skill created. Needs API key configuration in `.env`.
 
 ## Key Decisions
 - "Dream" / "Dream time" = trigger DREAM v2 nightly reflection cycle — always, no exceptions
@@ -35,7 +37,7 @@ _Curated wisdom. Updated regularly from daily logs._
 - Newsletter & Social Media Pipeline — full comms production workflow
 - End-of-Session Review — auto-extract skills after productive chats
 - Firehose API — real-time web monitoring via Lucene queries + SSE streaming
-- Firehose API — real-time web monitoring via Lucene queries + SSE
+- **Day Trader** — multi-agent LLM trading framework (fundamentals, technical, sentiment, news analysts; bull/bear debate; risk management)
 
 ## Telegram Groups
 - "Dwayne & Betaclaw" (-1003842503877) — forum mode, topics working
