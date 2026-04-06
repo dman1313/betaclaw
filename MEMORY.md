@@ -22,7 +22,7 @@ _Curated wisdom. Updated regularly from daily logs._
 - **Multiple gateway instances = 409 getUpdates conflict** — always kill duplicates before restarting. The container's start_gateway.sh loop can spawn extra instances if killed improperly.
 
 ## Active Projects
-- **News Pipeline**: Real-time web monitoring via Firehose API → Telegram group topics. Management key added, tap "Dwayne News Feed" created (ID: 607d826e-2c7e-443a-a649-acf7f698f3f1). 5 rules active (tech, finance, crypto, ai, world). Stream tested, waiting for matches.
+- **News Pipeline**: Firehose API live with 5 rules. Next: build delivery pipeline to Telegram group topic.
 - **Trading Setup**: TradingAgents v0.2.3 installed, dependencies ready. Day Trader skill created. Needs API key configuration in `.env`.
 
 ## Key Decisions
@@ -45,6 +45,13 @@ _Curated wisdom. Updated regularly from daily logs._
 - Bot is admin, can create/manage topics
 
 ## News Setup
-- Firehose API skill created — waiting for API keys to activate
-- Pre-built rules ready: Tech, Finance, Crypto, AI, World News
-- Will deliver real-time to Telegram group topic
+- Firehose API v3.0 skill — fully rebuilt from official docs + use cases
+- Management key active, tap "Dwayne News Feed" created with 5 rules (tech, finance, crypto, ai, world)
+- Stream connects OK — matches flowing as pages get crawled
+- **Next:** Build delivery pipeline (Firehose stream → Telegram group topic)
+- Dwayne also has 7 other taps (Social Media Trends, AI/LLMs, Education, News & Stock Market, Parenting, Nutrition, Meditation)
+
+## Telegram Group Status
+- Two-way messaging **FIXED** — root cause was multiple gateway instances (409 conflict)
+- Config: `groupPolicy: "open"`, `groupAllowFrom: ["7824646153"]`, specific group `-1003842503877`
+- Confirmed working via session logs (topic 54 received)
