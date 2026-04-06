@@ -1,0 +1,44 @@
+{
+  "date": "2026-04-05",
+  "timestamp": "2026-04-05T21:54:00Z",
+  "mode": "manual",
+  "trigger": "dream time",
+  "system_average": 0.83,
+  "episodes": [
+    {"episode": "Skill installation spree", "type": "task", "status": "complete", "score": 0.9},
+    {"episode": "DREAM skill creation", "type": "task", "status": "complete", "score": 1.0},
+    {"episode": "Gateway pairing issue", "type": "failure", "status": "unresolved", "score": 0.7},
+    {"episode": "Cron job creation", "type": "blocked", "status": "failed", "score": 0.6},
+    {"episode": "GitHub backup", "type": "task", "status": "complete", "score": 1.0},
+    {"episode": "Drive backup", "type": "skipped", "status": "pending", "score": 0.7}
+  ],
+  "dimensions": {
+    "completion": 0.64,
+    "engagement": 0.9,
+    "efficiency": 0.77,
+    "voice_fidelity": 1.0
+  },
+  "costs": {
+    "tokens_in": 6500,
+    "tokens_out": 315,
+    "git_commits": 1
+  },
+  "patterns": [
+    {"pattern": "gateway_pairing_required", "count": 1},
+    {"pattern": "gog_not_configured", "count": 1},
+    {"pattern": "clawhub_rate_limit", "count": 1}
+  ],
+  "repairs": [
+    {"id": 1, "name": "Pre-DREAM Gog Check", "risk": "low", "status": "proposed"},
+    {"id": 2, "name": "Gateway Health Check", "risk": "none", "status": "recommended"},
+    {"id": 3, "name": "Skill Install Delays", "risk": "none", "status": "established"}
+  ],
+  "tomorrow": [
+    "Fix gateway pairing",
+    "Configure Gog account",
+    "Re-run cron setup",
+    "Test automated DREAM at 2 AM"
+  ],
+  "quality_checks": [true, true, true, true, false],
+  "git_commit": "22e182b"
+}
