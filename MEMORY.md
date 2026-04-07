@@ -25,6 +25,7 @@ _Curated wisdom. Updated regularly from daily logs._
 ## Active Projects
 - **News Pipeline**: Firehose API live with 8 taps, delivery service running. Articles auto-post to Telegram topics.
 - **Trading Setup**: TradingAgents v0.2.3 installed, dependencies ready. Day Trader skill created. Needs API key configuration in `.env`.
+- **Newsletter Designer**: BEEFree SDK + AgentMail API integrated. Full newsletter workflow: design → export → send. 3 AgentMail inboxes available. Location: `~/workspace/beefree/`.
 - **Newsletter Designer**: BEEFree SDK v2.0.0 installed and tested. Visual editor functional with secure authentication. Location: `~/workspace/beefree/`. Skill: `~/workspace/skills/beefree/SKILL.md`. Ready for newsletter design and HTML export.
 
 ## Key Decisions
@@ -41,6 +42,7 @@ _Curated wisdom. Updated regularly from daily logs._
 - Firehose API — real-time web monitoring via Lucene queries + SSE streaming
 - Day Trader — multi-agent LLM trading framework (fundamentals, technical, sentiment, news analysts; bull/bear debate; risk management)
 - **BEEFree Newsletter Designer** — professional email/newsletter builder with 2000+ templates, visual drag-and-drop editor, secure authentication, HTML export
+- **AgentMail Newsletter Delivery** — AI agent email inboxes for newsletter delivery, rate limiting, HTML support, 3 inboxes available (npoclaw, schoolclaw, wolf@agentmail.to)
 
 ## Telegram Groups
 - "Dwayne & Betaclaw" (-1003842503877) — forum mode, 8 topics
