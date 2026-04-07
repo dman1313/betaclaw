@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newsletter Templates - Quick Loader</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: #1a1a2e;
+      color: #eee;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 0;
+    }
+
+    h1 {
+      color: #e94560;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #888;
+    }
+
+    .templates {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .template-card {
+      background: #16213e;
+      border-radius: 12px;
+      padding: 24px;
+      border: 2px solid #0f3460;
+      transition: all 0.3s ease;
+    }
+
+    .template-card:hover {
+      border-color: #e94560;
+      transform: translateY(-4px);
+    }
+
+    .template-card h3 {
+      color: #e94560;
+      margin-bottom: 12px;
+    }
+
+    .template-card p {
+      color: #aaa;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .template-card .features {
+      margin-bottom: 20px;
+    }
+
+    .template-card .features span {
+      display: inline-block;
+      background: #0f3460;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 12px;
+      margin-right: 6px;
+      margin-bottom: 6px;
+    }
+
+    button {
+      background: #e94560;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      width: 100%;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background: #c73e54;
+    }
+
+    .status {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 16px 24px;
+      border-radius: 8px;
+      background: #1a5c3a;
+      color: #4ade80;
+      display: none;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .status.show {
+      display: block;
+      animation: slideIn 0.3s ease;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateX(400px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .instructions {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #16213e;
+      padding: 24px;
+      border-radius: 12px;
+      border: 1px solid #0f3460;
+    }
+
+    .instructions h2 {
+      color: #e94560;
+      margin-bottom: 16px;
+    }
+
+    .instructions ol {
+      margin-left: 20px;
+      color: #aaa;
+      line-height: 1.8;
+    }
+
+    .instructions a {
+      color: #e94560;
+      text-decoration: none;
+    }
+
+    .instructions a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📧 Newsletter Templates</h1>
+    <p class="subtitle">Quick load templates into BEEFree Editor</p>
+  </header>
+
+  <div class="instructions">
+    <h2>How to Use</h2>
+    <ol>
+      <li>Click a template below to load it</li>
+      <li>The template will open in the BEEFree Editor</li>
+      <li>Customize with drag-and-drop editing</li>
+      <li>Click "Save Design" or "Export HTML" when done</li>
+    </ol>
+  </div>
+
+  <div class="templates">
+    <div class="template-card">
+      <h3>🎨 Basic Newsletter</h3>
+      <p>Clean, professional newsletter template with header, hero section, featured article, quick updates, CTA button, and footer.</p>
+      <div class="features">
+        <span>Header</span>
+        <span>Hero</span>
+        <span>Article</span>
+        <span>Updates</span>
+        <span>CTA</span>
+        <span>Footer</span>
+      </div>
+      <button onclick="loadTemplate('newsletter-basic')">Load Template</button>
+    </div>
+  </div>
+
+  <div id="status" class="status">
+    Template loaded! Opening editor...
+  </div>
+
+  <script>
+    async function loadTemplate(templateName) {
+      const statusEl = document.getElementById('status');
+
+      try {
+        statusEl.textContent = 'Loading template...';
+        statusEl.classList.add('show');
+
+        const response = await fetch(`/templates/${templateName}.json`);
+        const templateJson = await response.json();
+
+        statusEl.textContent = 'Opening editor...';
+
+        // Open editor in new tab
+        const editorUrl = '/newsletter-editor.html';
+        const editorWindow = window.open(editorUrl, '_blank');
+
+        // Wait for editor to load, then inject template
+        setTimeout(() => {
+          if (editorWindow && editorWindow.window.beeEditor) {
+            editorWindow.window.beeEditor.loadTemplate(templateJson);
+            statusEl.textContent = 'Template loaded!';
+            setTimeout(() => statusEl.classList.remove('show'), 2000);
+          }
+        }, 2000);
+
+      } catch (error) {
+        console.error('Error loading template:', error);
+        statusEl.style.background = '#5c1a1a';
+        statusEl.style.color = '#f87171';
+        statusEl.textContent = 'Error loading template: ' + error.message;
+      }
+    }
+  </script>
+</body>
+</html>
