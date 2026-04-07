@@ -1,0 +1,214 @@
+{
+  "description": "Basic Newsletter Template",
+  "title": "Newsletter Template",
+  "thumbnail": "",
+  "createdOn": "2026-04-07T11:16:00Z",
+  "updatedOn": "2026-04-07T11:16:00Z",
+  "authors": ["Dwayne"],
+  "category": "newsletter",
+  "tags": ["newsletter", "basic"],
+  "templateContent": {
+    "body": {
+      "type": "standardPage",
+      "theme": {
+        "body": {
+          "backgroundColor": "#ffffff",
+          "backgroundImage": {
+            "url": "",
+            "repeat": "no-repeat",
+            "position": "top center"
+          }
+        },
+        "fonts": {
+          "normalFont": {
+            "family": "Helvetica, Arial, sans-serif",
+            "size": "14px"
+          }
+        }
+      },
+      "rows": [
+        {
+          "id": "header-1",
+          "type": "header",
+          "style": {
+            "backgroundColor": "#e94560",
+            "backgroundImage": {
+              "url": "",
+              "repeat": "no-repeat",
+            "position": "top center"
+          }
+        },
+        "columns": [
+          {
+            "id": "col-1",
+            "style": {
+              "backgroundColor": "transparent"
+            },
+            "contents": [
+              {
+                "type": "text",
+                "content": {
+                  "html": "<h1>Your Newsletter Title</h1>"
+                },
+                "style": {
+                  "textAlign": "center",
+                  "textColor": "#ffffff"
+                }
+              }
+            ]
+          }
+        ]
+        },
+        {
+          "id": "hero-1",
+          "type": "row",
+          "style": {
+            "backgroundColor": "#f8f9fa"
+          },
+          "columns": [
+            {
+              "id": "col-2",
+              "style": {
+                "backgroundColor": "transparent"
+              },
+              "contents": [
+                {
+                  "type": "text",
+                  "content": {
+                    "html": "<h2>Welcome to Your Newsletter</h2><p>Here's what's new this week...</p>"
+                  },
+                  "style": {
+                    "textAlign": "center"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "content-1",
+          "type": "row",
+          "columns": [
+            {
+              "id": "col-3",
+              "style": {
+                "backgroundColor": "transparent",
+                "padding": "20px"
+              },
+              "contents": [
+                {
+                  "type": "text",
+                  "content": {
+                    "html": "<h3>Featured Article</h3><p>Your main article content goes here. Add engaging text that captures your readers' attention and provides value.</p>"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "col-4",
+              "style": {
+                "backgroundColor": "transparent",
+                "padding": "20px"
+              },
+              "contents": [
+                {
+                  "type": "image",
+                  "content": {
+                    "src": "https://via.placeholder.com/600x400/e94560/ffffff?text=Feature+Image",
+                    "alt": "Feature Image"
+                  },
+                  "style": {
+                    "width": "100%",
+                    "borderRadius": "8px"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "content-2",
+          "type": "row",
+          "columns": [
+            {
+              "id": "col-5",
+              "style": {
+                "backgroundColor": "transparent",
+                "padding": "20px"
+              },
+              "contents": [
+                {
+                  "type": "text",
+                  "content": {
+                    "html": "<h3>Quick Updates</h3><ul><li>Update item 1</li><li>Update item 2</li><li>Update item 3</li></ul>"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cta-1",
+          "type": "row",
+          "style": {
+            "backgroundColor": "#0f3460"
+          },
+          "columns": [
+            {
+              "id": "col-6",
+              "style": {
+                "backgroundColor": "transparent",
+                "padding": "40px"
+              },
+              "contents": [
+                {
+                  "type": "button",
+                  "content": {
+                    "label": "Learn More",
+                    "url": "https://example.com"
+                  },
+                  "style": {
+                    "backgroundColor": "#e94560",
+                    "color": "#ffffff",
+                    "borderRadius": "25px",
+                    "padding": "12px 30px",
+                    "fontSize": "16px"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "footer-1",
+          "type": "footer",
+          "style": {
+            "backgroundColor": "#16213e",
+            "textColor": "#ffffff"
+          },
+          "columns": [
+            {
+              "id": "col-7",
+              "style": {
+                "backgroundColor": "transparent",
+                "padding": "20px"
+              },
+              "contents": [
+                {
+                  "type": "text",
+                  "content": {
+                    "html": "<p style=\"text-align: center;\">© 2026 Your Company. All rights reserved.</p><p style=\"text-align: center;\">Follow us on social media | Contact Us</p>"
+                  },
+                  "style": {
+                    "textAlign": "center",
+                    "textColor": "#ffffff"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
