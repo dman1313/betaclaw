@@ -53,9 +53,20 @@ BEEFREE_PAGE_BUILDER_CLIENT_SECRET=PASTE_HERE
 
 # POPUP BUILDER
 BEEFREE_POPUP_BUILDER_CLIENT_SECRET=PASTE_HERE
-
 # FILE MANAGER
 BEEFREE_FILEMANAGER_CLIENT_SECRET=PASTE_HERE
+```
+
+**Note:** Secrets are configured and stored securely in workspace (.env.beefree)
+
+
+---
+
+## SDK Installation
+
+Beefree SDK is installed via npm:
+```bash
+npm install @beefree.io/sdk
 ```
 
 ---

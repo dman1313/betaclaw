@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "updatedAt": "2026-04-07T10:35:08.432Z",
+  "entries": {
+    "memory:memory/2026-04-06.md:1:28": {
+      "key": "memory:memory/2026-04-06.md:1:28",
+      "path": "memory/2026-04-06.md",
+      "startLine": 1,
+      "endLine": 28,
+      "source": "memory",
+      "snippet": "# 2026-04-06 - Day Three ## Telegram Group Messaging — FIXED - Issue: Bot could send to group, but couldn't receive Dwayne's messages - Root cause: **Multiple gateway instances** fighting over getUpdates (409 Conflict) - Fix applied: - `groupPolicy: \"open\"` set in channels.telegram - `groupAllowFrom: [\"7824646153\"]` added - Specific group config: `-1003842503877` with `groupPolicy: \"open\"` and `requireMention: false` - Killed duplicate gateway instances - Gateway restarted clean at 17:00 UTC - **Status**: Fixed, waiting for Dwayne to test ## Config Changes ```json channels.telegram.groupPolicy: \"open\" channels.telegram.groupAllowFrom: [\"7824646153\"] channels.telegram.groups.\"-10038",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "totalScore": 0.672107271234234,
+      "maxScore": 0.672107271234234,
+      "firstRecalledAt": "2026-04-07T10:35:08.432Z",
+      "lastRecalledAt": "2026-04-07T10:35:08.432Z",
+      "queryHashes": [
+        "85a79ea3e81d"
+      ],
+      "recallDays": [
+        "2026-04-07"
+      ],
+      "conceptTags": [
+        "gateway",
+        "channels.telegram",
+        "channels.telegram.grouppolicy",
+        "channels.telegram.groupallowfrom",
+        "channels.telegram.groups",
+        "day",
+        "three",
+        "telegram"
+      ]
+    },
+    "memory:memory/2026-04-05.md:1:38": {
+      "key": "memory:memory/2026-04-05.md:1:38",
+      "path": "memory/2026-04-05.md",
+      "startLine": 1,
+      "endLine": 38,
+      "source": "memory",
+      "snippet": "# 2026-04-05 - Day Two ## Telegram Token Updated - Dwayne provided new token: `8637621091:AAGTsXJNGynaNIi9nhhWlrsjcSHHHSarw8I` - Updated in openclaw.json (line 325) - Bot: @betaclawv1_bot ## Telegram Group — \"Dwayne & Betaclaw\" - Group ID: `-1003842503877` - Forum/topics enabled ✅ - Bot is admin ✅ - Successfully sent messages to group - Successfully posted in \"News & Events\" topic (thread ID 8) - Topics working — confirmed with test message ## Firehose API Skill Created - Source: https://firehose.com/use-cases - Created `skills/firehose-api.md` with full API reference - Includes pre-built news rules for: Tech, Finance, Crypto, AI, World - **Blocked**: Waiting for Firehose API keys from Dw",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "totalScore": 0.647803242663617,
+      "maxScore": 0.647803242663617,
+      "firstRecalledAt": "2026-04-07T10:35:08.432Z",
+      "lastRecalledAt": "2026-04-07T10:35:08.432Z",
+      "queryHashes": [
+        "85a79ea3e81d"
+      ],
+      "recallDays": [
+        "2026-04-07"
+      ],
+      "conceptTags": [
+        "openclaw.json",
+        "betaclawv1-bot",
+        "forum/topics",
+        "firehose.com/use-cases",
+        "skills/firehose-api.md",
+        "pre-built",
+        "day",
+        "two"
+      ]
+    }
+  }
+}

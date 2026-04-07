@@ -22,7 +22,7 @@ _Curated wisdom. Updated regularly from daily logs._
 - **Multiple gateway instances = 409 getUpdates conflict** — always kill duplicates before restarting. The container's start_gateway.sh loop can spawn extra instances if killed improperly.
 
 ## Active Projects
-- **News Pipeline**: Firehose API live with 5 rules. Next: build delivery pipeline to Telegram group topic.
+- **News Pipeline**: Firehose API live with 8 taps, delivery service running. Articles auto-post to Telegram topics.
 - **Trading Setup**: TradingAgents v0.2.3 installed, dependencies ready. Day Trader skill created. Needs API key configuration in `.env`.
 
 ## Key Decisions
@@ -40,16 +40,18 @@ _Curated wisdom. Updated regularly from daily logs._
 - **Day Trader** — multi-agent LLM trading framework (fundamentals, technical, sentiment, news analysts; bull/bear debate; risk management)
 
 ## Telegram Groups
-- "Dwayne & Betaclaw" (-1003842503877) — forum mode, topics working
-- "News & Events" topic (thread 8) — for news delivery
+- "Dwayne & Betaclaw" (-1003842503877) — forum mode, 8 topics
+- Topics created: News & Events (8), Social Media Trends (236), Meditation & Wellness (237), Nutrition & Health (238), Parenting (239), Stock Market (240), Education (242), AI/LLMs (228)
 - Bot is admin, can create/manage topics
 
 ## News Setup
 - Firehose API v3.0 skill — fully rebuilt from official docs + use cases
-- Management key active, tap "Dwayne News Feed" created with 5 rules (tech, finance, crypto, ai, world)
-- Stream connects OK — matches flowing as pages get crawled
-- **Next:** Build delivery pipeline (Firehose stream → Telegram group topic)
-- Dwayne also has 7 other taps (Social Media Trends, AI/LLMs, Education, News & Stock Market, Parenting, Nutrition, Meditation)
+- Management key active, 8 taps total:
+  - Dwayne News Feed (5 rules: tech, finance, crypto, AI, world)
+  - Social Media Trends, AI/LLMs, Education, Stock Market, Parenting, Nutrition, Meditation
+- Delivery service live: `/home/node/.openclaw/workspace/scripts/firehose-delivery.py` (PID: 458)
+- Management: `~/scripts/firehose-manage.sh {start|stop|restart|status|logs}`
+- Telegram topics: 8 topics mapped to taps, articles auto-posting
 
 ## Telegram Group Status
 - Two-way messaging **FIXED** — root cause was multiple gateway instances (409 conflict)
