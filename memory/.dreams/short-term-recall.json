@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-07T10:35:08.432Z",
+  "updatedAt": "2026-04-07T11:47:35.011Z",
   "entries": {
     "memory:memory/2026-04-06.md:1:28": {
       "key": "memory:memory/2026-04-06.md:1:28",
@@ -60,6 +60,97 @@
         "pre-built",
         "day",
         "two"
+      ]
+    },
+    "memory:memory/2026-04-07.md:38:93": {
+      "key": "memory:memory/2026-04-07.md:38:93",
+      "path": "memory/2026-04-07.md",
+      "startLine": 38,
+      "endLine": 93,
+      "source": "memory",
+      "snippet": "1. **BEEFree Developer Account**: https://developers.beefree.io/signup 2. **Application credentials**: Client ID and Client Secret 3. **Add to `.env`**: ```env BEEFREE_CLIENT_ID=your_id BEEFREE_CLIENT_SECRET=your_secret ``` ## Usage ### Start Auth Proxy ```bash cd ~/workspace/beefree npm start # Runs on http://localhost:3001 ``` ### Open Editor ```bash cd ~/workspace/beefree python -m http.server 8080 # Visit: http://localhost:8080/newsletter-editor.html ``` ### Template Catalog ```bash # Search templates npm run catalog:search newsletter marketing # Get specific template npm run catalog:get template-slug ``` ## Technical Notes - **DNS Issue**: `catalog.getbee.io` may not",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "totalScore": 1.3329539299991455,
+      "maxScore": 0.712592555770626,
+      "firstRecalledAt": "2026-04-07T11:45:48.694Z",
+      "lastRecalledAt": "2026-04-07T11:47:35.011Z",
+      "queryHashes": [
+        "bc5205aa7cd1",
+        "fbae79d78a92"
+      ],
+      "recallDays": [
+        "2026-04-07"
+      ],
+      "conceptTags": [
+        "developers.beefree.io/signup",
+        "beefree-client-id",
+        "your-id",
+        "beefree-client-secret",
+        "your-secret",
+        "workspace/beefree",
+        "http.server",
+        "8080/newsletter-editor.html"
+      ]
+    },
+    "memory:memory/2026-04-04.md:81:119": {
+      "key": "memory:memory/2026-04-04.md:81:119",
+      "path": "memory/2026-04-04.md",
+      "startLine": 81,
+      "endLine": 119,
+      "source": "memory",
+      "snippet": "- id: \"glm-5.1\", name: \"GLM-5.1\", reasoning: true, input: [\"text\"] - cost: all zeros (coding plan pricing) - contextWindow: 204800, maxTokens: 131072 2. Changed primary model from `zai/glm-4.7` to `zai/glm-5.1` 3. Added `zai/glm-5.1` to `agents.defaults.models` mapping 4. Added `zai/glm-4.7` as first fallback model 5. Restarted gateway to apply changes GLM-5.1 should now be the default model for all new sessions. ## Identity Established User defined CLAW CLAW: playful special-ops partner for wealth building. Updated SOUL.md, IDENTITY.md. ## Telegram Fixed - Bot token was Zai API key (wrong). Got real token from Dwayne. - Bot: @betaclawv1_bot (\"Betaclaw\") - Paired Telegram sender",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "totalScore": 0.6930407269366364,
+      "maxScore": 0.6930407269366364,
+      "firstRecalledAt": "2026-04-07T11:46:00.244Z",
+      "lastRecalledAt": "2026-04-07T11:46:00.244Z",
+      "queryHashes": [
+        "519f7c51729e"
+      ],
+      "recallDays": [
+        "2026-04-07"
+      ],
+      "conceptTags": [
+        "gateway",
+        "glm-5.1",
+        "zai/glm-4.7",
+        "zai/glm-5.1",
+        "agents.defaults.models",
+        "special-ops",
+        "soul.md",
+        "identity.md"
+      ]
+    },
+    "memory:memory/2026-04-06.md:50:65": {
+      "key": "memory:memory/2026-04-06.md:50:65",
+      "path": "memory/2026-04-06.md",
+      "startLine": 50,
+      "endLine": 65,
+      "source": "memory",
+      "snippet": "### Security fixes (notable) - Claude CLI config isolation (no silent config hijacking) - Device pairing scope tightening - Plugin route scope hardening - Outbound sanitizer strips leaked model tokens from replies ### Provider improvements - Z.AI: preserve explicit `glm-5-*` variants (won't intercept with generic shim) - Better Anthropic Vertex cache retention - Google Gemini CLI auth improvements ## Still Pending - [ ] Set up Firehose stream → Telegram group delivery pipeline - [ ] Cron heartbeat setup (needs host terminal) - [ ] Test group messaging two-way with Dwayne",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "totalScore": 0.581059761762542,
+      "maxScore": 0.581059761762542,
+      "firstRecalledAt": "2026-04-07T11:47:35.011Z",
+      "lastRecalledAt": "2026-04-07T11:47:35.011Z",
+      "queryHashes": [
+        "fbae79d78a92"
+      ],
+      "recallDays": [
+        "2026-04-07"
+      ],
+      "conceptTags": [
+        "z.ai",
+        "glm-5",
+        "two-way",
+        "security",
+        "fixes",
+        "notable",
+        "claude",
+        "cli"
       ]
     }
   }

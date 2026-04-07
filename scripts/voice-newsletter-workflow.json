@@ -1,0 +1,140 @@
+{
+  "name": "Voice to Newsletter",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": ["message"]
+      },
+      "id": "telegram-trigger",
+      "name": "Telegram Trigger",
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "webhookId": "voice-newsletter-trigger"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "fileId": "={{ $json.voice?.file_id }}"
+      },
+      "id": "download-voice",
+      "name": "Download Voice File",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "fileId": "={{ $json.photo?.[0]?.file_id }}"
+      },
+      "id": "download-photo",
+      "name": "Download Photo File",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [450, 450]
+    },
+    {
+      "parameters": {
+        "resource": "audio",
+        "operation": "transcribe",
+        "model": "whisper-1",
+        "file": "={{ $binary.data }}"
+      },
+      "id": "whisper-transcribe",
+      "name": "Transcribe with Whisper",
+      "type": "n8n-nodes-base.openAi",
+      "typeVersion": 1,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "resource": "chat",
+        "operation": "create",
+        "modelId": "gpt-4o",
+        "messages": {
+          "values": [
+            {
+              "role": "system",
+              "content": "You are a skilled newsletter writer. Transform raw content into engaging newsletters."
+            },
+            {
+              "role": "user",
+              "content": "=Transform this into a newsletter:\n\nTranscript: {{ $json.text }}\n\nOutput HTML with <h2> title, <p> paragraphs, <strong> emphasis.\nLength: 300-500 words.\nTone: Warm, conversational.\nInclude: Hook, main content, personal insight, call-to-action, P.S. line."
+            }
+          ]
+        }
+      },
+      "id": "generate-newsletter",
+      "name": "Generate Newsletter",
+      "type": "n8n-nodes-base.openAi",
+      "typeVersion": 1,
+      "position": [850, 300]
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $telegram.json.message.chat.id }}",
+        "text": "📧 **Newsletter Draft**\n\n{{ $json.content }}\n\n---\n🔗 Transcription: {{ $telegram.json.message.text || 'Voice note' }}\n💡 Edit & publish this content!"
+      },
+      "id": "send-draft",
+      "name": "Send Draft to User",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [1050, 300]
+    }
+  ],
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Download Voice File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Voice File": {
+      "main": [
+        [
+          {
+            "node": "Transcribe with Whisper",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transcribe with Whisper": {
+      "main": [
+        [
+          {
+            "node": "Generate Newsletter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Newsletter": {
+      "main": [
+        [
+          {
+            "node": "Send Draft to User",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2026-04-07T17:00:00.000Z",
+  "versionId": "1"
+}
