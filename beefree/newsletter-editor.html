@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BEEFree Newsletter Editor</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: #1a1a2e;
+      color: #eee;
+    }
+
+    header {
+      background: #16213e;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #0f3460;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      color: #e94560;
+    }
+
+    .controls {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    button {
+      background: #e94560;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background: #c73e54;
+    }
+
+    button:disabled {
+      background: #555;
+      cursor: not-allowed;
+    }
+
+    #beefree-sdk-container {
+      width: 100%;
+      height: calc(100vh - 70px);
+      background: #0f3460;
+    }
+
+    #status {
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+
+    .status-loading {
+      background: #0f3460;
+      color: #e94560;
+    }
+
+    .status-ready {
+      background: #1a5c3a;
+      color: #4ade80;
+    }
+
+    .status-error {
+      background: #5c1a1a;
+      color: #f87171;
+    }
+
+    #template-json {
+      display: none;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🐝 Newsletter Editor</h1>
+    <div class="controls">
+      <div id="status" class="status-loading">Initializing...</div>
+      <button id="save-btn" disabled>Save Design</button>
+      <button id="export-btn" disabled>Export HTML</button>
+    </div>
+  </header>
+
+  <div id="beefree-sdk-container"></div>
+
+  <!-- Hidden textarea for template JSON -->
+  <textarea id="template-json" style="display: none;"></textarea>
+
+  <script type="module">
+    import BeefreeSDK from '@beefree.io/sdk';
+
+    const PROXY_URL = 'http://localhost:3001/proxy/bee-auth';
+    const REFRESH_URL = 'http://localhost:3001/proxy/bee-refresh';
+
+    let beeInstance = null;
+    let currentToken = null;
+    let currentUid = 'user-' + Date.now();
+
+    const statusEl = document.getElementById('status');
+    const saveBtn = document.getElementById('save-btn');
+    const exportBtn = document.getElementById('export-btn');
+    const templateJsonEl = document.getElementById('template-json');
+
+    /**
+     * Update status display
+     */
+    function setStatus(type, message) {
+      statusEl.className = 'status-' + type;
+      statusEl.textContent = message;
+    }
+
+    /**
+     * Get authentication token from backend
+     */
+    async function getToken() {
+      try {
+        const response = await fetch(PROXY_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ uid: currentUid })
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to get token');
+        }
+
+        const data = await response.json();
+        return data.token;
+      } catch (error) {
+        setStatus('error', 'Auth failed: ' + error.message);
+        throw error;
+      }
+    }
+
+    /**
+     * Initialize BEEFree editor
+     */
+    async function initEditor(templateJson = null) {
+      try {
+        setStatus('loading', 'Authenticating...');
+        currentToken = await getToken();
+
+        setStatus('loading', 'Loading editor...');
+
+        const config = {
+          container: document.getElementById('beefree-sdk-container'),
+          uid: currentUid,
+          onSave: (jsonFile, htmlFile) => {
+            console.log('Save callback:', { jsonFile, htmlFile });
+            templateJsonEl.value = jsonFile;
+            alert('Design saved! JSON has been stored.');
+          },
+          onSaveAsTemplate: (jsonFile) => {
+            console.log('Save as template:', jsonFile);
+            alert('Template saved!');
+          },
+          onAutoSave: (jsonFile) => {
+            console.log('Auto save:', jsonFile);
+            templateJsonEl.value = jsonFile;
+          },
+          onLoad: () => {
+            setStatus('ready', 'Editor ready');
+            saveBtn.disabled = false;
+            exportBtn.disabled = false;
+          },
+          onError: (error) => {
+            console.error('Editor error:', error);
+
+            if (error.code === 5101) {
+              // Token expired, refresh it
+              setStatus('loading', 'Refreshing token...');
+              getToken().then(token => {
+                currentToken = token;
+                beeInstance.updateToken(token);
+              }).catch(err => {
+                setStatus('error', 'Token refresh failed');
+              });
+            } else if (error.code === 5102) {
+              // Complete refresh required
+              setStatus('loading', 'Reinitializing editor...');
+              const template = error.template;
+              beeInstance = new BeefreeSDK(currentToken);
+              beeInstance.start(config, template, '', { shared: false });
+            } else {
+              setStatus('error', 'Error: ' + (error.message || 'Unknown'));
+            }
+          }
+        };
+
+        beeInstance = new BeefreeSDK(currentToken);
+
+        // Start with empty template or provided template
+        await beeInstance.start(
+          config,
+          templateJson || {},
+          '',
+          { shared: false }
+        );
+
+      } catch (error) {
+        console.error('Failed to initialize editor:', error);
+        setStatus('error', 'Failed to load: ' + error.message);
+      }
+    }
+
+    /**
+     * Save current design
+     */
+    function saveDesign() {
+      if (beeInstance) {
+        beeInstance.save();
+      }
+    }
+
+    /**
+     * Export HTML
+     */
+    async function exportHTML() {
+      if (beeInstance) {
+        try {
+          const html = await beeInstance.getHtml();
+          const blob = new Blob([html], { type: 'text/html' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = 'newsletter.html';
+          a.click();
+          URL.revokeObjectURL(url);
+        } catch (error) {
+          alert('Failed to export: ' + error.message);
+        }
+      }
+    }
+
+    /**
+     * Load template from JSON file
+     */
+    function loadTemplateFromJSON(json) {
+      try {
+        const template = typeof json === 'string' ? JSON.parse(json) : json;
+        initEditor(template);
+      } catch (error) {
+        alert('Invalid template JSON: ' + error.message);
+      }
+    }
+
+    // Event listeners
+    saveBtn.addEventListener('click', saveDesign);
+    exportBtn.addEventListener('click', exportHTML);
+
+    // Expose functions globally for external control
+    window.beeEditor = {
+      init: initEditor,
+      save: saveDesign,
+      export: exportHTML,
+      loadTemplate: loadTemplateFromJSON,
+      getInstance: () => beeInstance
+    };
+
+    // Auto-initialize on load
+    initEditor();
+
+    console.log('🐝 BEEFree Newsletter Editor loaded');
+    console.log('Available methods: window.beeEditor.init(), window.beeEditor.save(), window.beeEditor.export()');
+  </script>
+</body>
+</html>

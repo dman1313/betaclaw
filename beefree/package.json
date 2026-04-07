@@ -1,0 +1,25 @@
+{
+  "name": "beefree-newsletter",
+  "version": "1.0.0",
+  "description": "BEEFree SDK newsletter editor with secure authentication",
+  "main": "auth-proxy.js",
+  "scripts": {
+    "start": "node auth-proxy.js",
+    "catalog": "node catalog-client.js",
+    "catalog:list": "node catalog-client.js list",
+    "catalog:get": "node catalog-client.js get",
+    "catalog:search": "node catalog-client.js search"
+  },
+  "keywords": [
+    "beefree",
+    "newsletter",
+    "email-editor"
+  ],
+  "dependencies": {
+    "@beefree.io/sdk": "^2.0.0",
+    "axios": "^1.14.0",
+    "cors": "^2.8.6",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.1"
+  }
+}

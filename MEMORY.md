@@ -20,10 +20,12 @@ _Curated wisdom. Updated regularly from daily logs._
 - Telegram token was accidentally set to Zai API key — fixed with real bot token from BotFather
 - Config edits directly to openclaw.json work when gateway config.patch fails due to pairing issues
 - **Multiple gateway instances = 409 getUpdates conflict** — always kill duplicates before restarting. The container's start_gateway.sh loop can spawn extra instances if killed improperly.
+- **BEEFree Authentication**: Client ID must match the correct Client Secret for the specific application type (Email Builder, Page Builder, Popup, Filemanager). When testing, verify both ID and secret from the same application in BEEFree Developer Console.
 
 ## Active Projects
 - **News Pipeline**: Firehose API live with 8 taps, delivery service running. Articles auto-post to Telegram topics.
 - **Trading Setup**: TradingAgents v0.2.3 installed, dependencies ready. Day Trader skill created. Needs API key configuration in `.env`.
+- **Newsletter Designer**: BEEFree SDK v2.0.0 installed and tested. Visual editor functional with secure authentication. Location: `~/workspace/beefree/`. Skill: `~/workspace/skills/beefree/SKILL.md`. Ready for newsletter design and HTML export.
 
 ## Key Decisions
 - "Dream" / "Dream time" = trigger DREAM v2 nightly reflection cycle — always, no exceptions
@@ -37,7 +39,8 @@ _Curated wisdom. Updated regularly from daily logs._
 - Newsletter & Social Media Pipeline — full comms production workflow
 - End-of-Session Review — auto-extract skills after productive chats
 - Firehose API — real-time web monitoring via Lucene queries + SSE streaming
-- **Day Trader** — multi-agent LLM trading framework (fundamentals, technical, sentiment, news analysts; bull/bear debate; risk management)
+- Day Trader — multi-agent LLM trading framework (fundamentals, technical, sentiment, news analysts; bull/bear debate; risk management)
+- **BEEFree Newsletter Designer** — professional email/newsletter builder with 2000+ templates, visual drag-and-drop editor, secure authentication, HTML export
 
 ## Telegram Groups
 - "Dwayne & Betaclaw" (-1003842503877) — forum mode, 8 topics

@@ -1,107 +1,140 @@
-# Skill: Beefree Newsletter Automation
+# BEEFree Newsletter Designer Skill
 
-## Purpose
-Use Beefree SDK to build complete newsletter automation pipelines. Generate newsletters from prompts, voice, or data; structure content using best practices; export HTML + JSON; continuously improve from documentation and GitHub.
+Design professional newsletters using the BEEFree SDK with secure authentication.
 
-## Core Principle
-Agent = Brain, Beefree SDK = Builder. You decide WHAT to build, Beefree executes HOW it looks.
+## Setup
 
-## Trigger
-When user asks to:
-- Create/build a newsletter
-- Design an email
-- Generate newsletter content
-- Automate newsletter production
+### Prerequisites
 
----
+1. **Get BEEFree Credentials**:
+   - Sign up at https://developers.beefree.io/signup
+   - Create an application in the Developer Console
+   - Copy Client ID and Client Secret
 
-## 🔗 Required Learning Sources
-- https://developers.beefree.io/build-with-ai
-- https://docs.beefree.io/beefree-sdk
-- https://docs.beefree.io/beefree-sdk/mcp-server/getting-started
-- https://docs.beefree.io/beefree-sdk/visual-builders
-- https://github.com/BeefreeSDK/beefree-sdk-npm-official
+2. **Configure Environment**:
+   ```bash
+   cd ~/workspace/beefree
+   cp .env.example .env
+   # Edit .env and add your credentials
+   ```
 
-## Auto-Research Directive
-Before doing anything:
-1. Check documentation
-2. Check GitHub repo
-3. Extract best practices
-4. Improve your workflow
+3. **Install Dependencies**:
+   ```bash
+   cd ~/workspace/beefree
+   npm install
+   ```
 
-Never rely on outdated assumptions.
+## Usage
 
----
-
-## 🔐 Account Configuration
-
-### Applications
-| Builder | Client ID | Status | Plan |
-|---------|-----------|--------|------|
-| Email Builder | 0ed7060a-e315-4638-be2b-0a7c29cb7d25 | Active | Free |
-| Page Builder | d2f00f6a-aeca-4503-98cf-6f25976b0220 | Active | Free |
-| Popup Builder | febe13c9-f8fa-4fd2-9990-942730997988 | Active | Free |
-| File Manager | dd8a5a02-97cb-4605-85f0-66622871a85a | Active | Free |
-
-### Required Secrets
+### Start Auth Proxy
 ```bash
-# EMAIL BUILDER
-BEEFREE_EMAIL_BUILDER_CLIENT_SECRET=PASTE_HERE
+cd ~/workspace/beefree
+npm start
+```
+Server runs on http://localhost:3001
 
-# PAGE BUILDER
-BEEFREE_PAGE_BUILDER_CLIENT_SECRET=PASTE_HERE
-
-# POPUP BUILDER
-BEEFREE_POPUP_BUILDER_CLIENT_SECRET=PASTE_HERE
-# FILE MANAGER
-BEEFREE_FILEMANAGER_CLIENT_SECRET=PASTE_HERE
+### Open Editor
+```bash
+cd ~/workspace/beefree
+python -m http.server 8080
+# Visit: http://localhost:8080/newsletter-editor.html
 ```
 
-**Note:** Secrets are configured and stored securely in workspace (.env.beefree)
-
-
----
-
-## SDK Installation
-
-Beefree SDK is installed via npm:
+### Template Catalog CLI
 ```bash
-npm install @beefree.io/sdk
+# List all templates
+npm run catalog:list
+
+# Search templates
+npm run catalog:search newsletter marketing
+
+# Get specific template
+npm run catalog:get <template-slug>
 ```
 
----
+## Features
 
-## Workflow
+- **2000+ Templates**: Access BEEFree's template catalog
+- **Visual Editor**: Drag-and-drop newsletter builder
+- **Secure Auth**: Server-side token generation
+- **Auto Refresh**: 12-hour session handling
+- **Export HTML**: Download finished designs
 
-### Phase 1: Content Generation
-1. Get user input: prompt, voice, or data source
-2. Research topic if needed (web search, documentation)
-3. Structure content using newsletter best practices
-4. Draft: subject line, headline, body, CTA
+## API Endpoints
 
-### Phase 2: Beefree Integration
-1. Initialize Beefree SDK with appropriate builder (email/page/popup)
-2. Select or create template
-3. Build content using Beefree tools
-4. Export HTML + JSON
+### Auth Proxy (localhost:3001)
+- `POST /proxy/bee-auth` - Get authentication token
+- `POST /proxy/bee-refresh` - Refresh expired token
+- `GET /health` - Health check
 
-### Phase 3: Delivery
-1. Preview if requested
-2. Export to final format
-3. Deliver via email, webhook, or storage
-4. Log for analytics/learning
+### Template Catalog
+```javascript
+// Get templates with filters
+await catalog.getTemplates({
+  search: 'newsletter',
+  category: 'business',
+  pagesize: 20
+});
 
----
+// Get specific template
+await catalog.getTemplate('template-slug');
+```
+
+## Editor JavaScript API
+
+```javascript
+// Initialize with template JSON
+window.beeEditor.init(templateJson);
+
+// Save current design
+window.beeEditor.save();
+
+// Export HTML
+window.beeEditor.export();
+
+// Load template from JSON
+window.beeEditor.loadTemplate(templateJson);
+```
+
+## Example Workflow
+
+1. **Start auth proxy**: `npm start`
+2. **Search templates**: `npm run catalog:search newsletter`
+3. **Copy template JSON** from response
+4. **Open editor** in browser
+5. **Load template**: `window.beeEditor.loadTemplate(yourJson)`
+6. **Design** with visual editor
+7. **Export HTML** when done
 
 ## File Structure
-- `skills/beefree/` — skill directory
-- `skills/beefree/templates/` — saved Beefree templates
-- `skills/beefree/newsletters/` — generated newsletters
-- `skills/beefree/docs/` — extracted best practices
 
----
+```
+beefree/
+├── .env                # Credentials (NEVER commit)
+├── .env.example        # Template for env vars
+├── auth-proxy.js       # Server-side auth handler
+├── catalog-client.js   # Template catalog API client
+├── newsletter-editor.html  # Visual editor UI
+├── package.json        # Dependencies and scripts
+├── README.md           # Full documentation
+└── SKILL.md           # This file
+```
 
-## Notes
-- Free plan has limitations; check before production
-- Always verify secrets before first use
-- Continuously learn from docs and GitHub updates
+## Security
+
+- ✅ Credentials stored in `.env` (server-side only)
+- ✅ No frontend credential exposure
+- ✅ Auto token refresh (12-hour sessions)
+- ✅ Graceful error handling
+
+## Next Steps
+
+1. Add BEEFree credentials to `.env`
+2. Test template catalog: `npm run catalog:search newsletter`
+3. Open editor and start designing!
+
+## Documentation Links
+
+- [BEEFree SDK Docs](https://docs.beefree.io/beefree-sdk)
+- [Template Catalog API](https://docs.beefree.io/beefree-sdk/apis/template-catalog-api/templates)
+- [Getting Started](https://docs.beefree.io/beefree-sdk/getting-started)
