@@ -1,6 +1,6 @@
 # Trading Setup Project
 
-## Status: 🟡 In Progress - Configuration Needed
+## Status: 🟡 In Progress - Configuration Needed (Pending since Apr 6)
 
 ## What We Built
 - ✅ Cloned TradingAgents v0.2.3 from TauricResearch
@@ -14,6 +14,8 @@
 - [ ] Test basic analysis with quick config (1 debate round)
 - [ ] Set up watchlist for day trading targets
 - [ ] Create daily trading workflow (optional)
+
+⚠️ **Attention**: Project has been pending API key configuration since April 6. Ready to test once API key is added.
 
 ## Skills Created
 - `skills/day-trader/SKILL.md` - Main skill documentation
