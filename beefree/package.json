@@ -8,7 +8,10 @@
     "catalog": "node catalog-client.js",
     "catalog:list": "node catalog-client.js list",
     "catalog:get": "node catalog-client.js get",
-    "catalog:search": "node catalog-client.js search"
+    "catalog:search": "node catalog-client.js search",
+    "inbox:create": "node send-newsletter.js create-inbox",
+    "inbox:list": "node send-newsletter.js list-inboxes",
+    "newsletter:send": "node send-newsletter.js send"
   },
   "keywords": [
     "beefree",
@@ -17,6 +20,7 @@
   ],
   "dependencies": {
     "@beefree.io/sdk": "^2.0.0",
+    "agentmail": "^0.4.18",
     "axios": "^1.14.0",
     "cors": "^2.8.6",
     "dotenv": "^16.6.1",
