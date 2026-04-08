@@ -23,10 +23,10 @@ _Curated wisdom. Updated regularly from daily logs._
 - **BEEFree Authentication**: Client ID must match the correct Client Secret for the specific application type (Email Builder, Page Builder, Popup, Filemanager). When testing, verify both ID and secret from the same application in BEEFree Developer Console.
 
 ## Active Projects
-- **News Pipeline**: Firehose API live with 8 taps, delivery service running. Articles auto-post to Telegram topics.
-- **Trading Setup**: TradingAgents v0.2.3 installed, dependencies ready. Day Trader skill created. Needs API key configuration in `.env`.
-- **Newsletter Designer**: BEEFree SDK + AgentMail API integrated. Full newsletter workflow: design → export → send. 3 AgentMail inboxes available. Location: `~/workspace/beefree/`.
-- **Newsletter Designer**: BEEFree SDK v2.0.0 installed and tested. Visual editor functional with secure authentication. Location: `~/workspace/beefree/`. Skill: `~/workspace/skills/beefree/SKILL.md`. Ready for newsletter design and HTML export.
+- **News Pipeline**: Firehose API v3.0 live with 8 taps, rules active. Tap "Dwayne News Feed" (ID: 607d826e-2c7e-443a-a649-acf7f698f3f1) token `fh_52IxqhJVdXqS0AOE6paF1wFPI79iAK6GL582ElRn`.
+- **Trading Setup**: TradingAgents v0.2.3 installed, dependencies ready. Day Trader skill created. Awaiting API key in `TradingAgents/.env`.
+- **Newsletter Designer (BEEFree)**: v2.0.0 SDK installed with visual editor, auth proxy, template catalog. Ready at `~/workspace/beefree/`. Needs developer credentials.
+- **Voice Newsletter**: TTS workflow built for audio newsletters. Location: `~/workspace/scripts/voice-newsletter-workflow.json`.
 
 ## Key Decisions
 - "Dream" / "Dream time" = trigger DREAM v2 nightly reflection cycle — always, no exceptions

@@ -13,6 +13,8 @@ _Run during heartbeat polls. Pick 1-2 items per heartbeat, rotate._
 - [ ] **Project check** — Review `memory/projects/`, flag stale items
 - [ ] **Preference update** — Review recent chats, update `memory/preferences.md`
 - [ ] **Git housekeeping** — Commit any uncommitted changes
+- [ ] **Telegram check** — Confirm group messaging still working (gateway restart issue)
+- [ ] **Firehose delivery** — Add FIREHOSE_TAP_TOKEN to env, start delivery pipeline
 
 ## End-of-Session (when session was productive)
 - [ ] Extract new skills from conversation
