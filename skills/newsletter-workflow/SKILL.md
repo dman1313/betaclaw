@@ -1,14 +1,22 @@
 # Skill: Master Newsletter Workflow
 
+---
+name: newsletter-workflow
+description: End-to-end newsletter workflow from voice notes, text, links, and photos into a reviewable newsletter package, BEEFree-ready template, and export/send handoff. Use when the user wants a newsletter created, rewritten, researched, formatted for email, loaded into BEEFree, or prepared for approval and delivery.
+---
+
+# Skill: Master Newsletter Workflow
+
 ## Purpose
-Manage full newsletter creation pipeline from raw input (text/voice + photos) to final newsletter draft. One unified workflow with three internal role stages.
+Manage the full newsletter pipeline from raw input (text, voice, links, photos) to article draft, newsletter package, BEEFree-ready content, and delivery handoff.
 
 ## Trigger
-When user asks to:
-- Create a newsletter
-- Build an article for newsletter
-- Process voice/text for newsletter
-- Turn content into newsletter-ready format
+Use when the user asks to:
+- create a newsletter
+- turn voice/text into a newsletter
+- research and rewrite a story for email
+- place content into BEEFree
+- prepare approval package, HTML export, or send handoff
 
 ---
 
@@ -169,6 +177,33 @@ Run in this order. Do not skip stages or duplicate responsibilities.
 
 ---
 
+## STAGE 5: BEEFREE PACKAGING — EMAIL DESIGN HANDOFF
+
+**Goal**: Turn the newsletter package into something that can be loaded into BEEFree fast.
+
+**Tasks**:
+- Create a BEEFree-ready content structure
+- Map headline, preheader, body, CTA, and image slots
+- Use an existing local BEEFree template when available
+- Save a JSON template or update an existing one for editor loading
+- If BEEFree is running, prepare a direct editor URL with the template query param
+- If the user wants delivery, prep HTML export handoff and sending notes
+
+**Output**: Create a **BEEFree Package** with:
+1. Template JSON path
+2. Editor URL
+3. Subject/preheader set
+4. Hero image choice
+5. Export or send notes
+
+**Important Rules**:
+- Prefer simple, editable layouts over overbuilt templates
+- Keep copy modular so the user can tweak it in the editor
+- Use real image assets when available, otherwise mark placeholders clearly
+- Never send automatically unless the user explicitly asks
+
+---
+
 ## HANDOFF RULES
 
 The handoffs must be clean.
@@ -242,6 +277,7 @@ Always output in this order:
 ## Research Brief
 ## Article Draft
 ## Newsletter Package
+## BEEFree Package
 ```
 
 If a stage cannot be completed fully, state what is missing clearly.
@@ -280,7 +316,15 @@ This is one master workflow.
 
 ---
 
+## AUTOMATION NOTES
+- Use faster-whisper or whisper for voice transcription when voice notes are provided
+- Use the local BEEFree workspace at `/home/node/.openclaw/workspace/beefree`
+- Prefer loading templates through `newsletter-editor.html?template=/templates/<file>.json`
+- Keep one reusable JSON template per newsletter when practical
+- For review surfaces, Notion is fine; for actual email design, prefer BEEFree
+- User approval is recommended before export/send
+
 ## NOTES
-- Always confirm intake brief with user before proceeding to research
+- Confirm intake brief with user before heavy research when ambiguity matters
 - Flag research gaps early
 - User approval recommended before final packaging

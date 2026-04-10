@@ -14,3 +14,4 @@ TradingAgents/.git/
 TradingAgents/
 /home/node/.openclaw/workspace/.env.beefree
 openclaw-config-backup-*.json
+.env.secrets

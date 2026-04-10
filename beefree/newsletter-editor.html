@@ -279,8 +279,27 @@
       getInstance: () => beeInstance
     };
 
+    async function autoInit() {
+      const params = new URLSearchParams(window.location.search);
+      const templateUrl = params.get('template');
+
+      if (templateUrl) {
+        try {
+          const res = await fetch(templateUrl);
+          const template = await res.json();
+          await initEditor(template.templateContent || template);
+          console.log('Loaded template from', templateUrl);
+          return;
+        } catch (error) {
+          console.error('Failed to load template from URL:', error);
+        }
+      }
+
+      await initEditor();
+    }
+
     // Auto-initialize on load
-    initEditor();
+    autoInit();
 
     console.log('🐝 BEEFree Newsletter Editor loaded');
     console.log('Available methods: window.beeEditor.init(), window.beeEditor.save(), window.beeEditor.export()');

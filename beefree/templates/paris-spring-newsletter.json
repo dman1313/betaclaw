@@ -1,0 +1,159 @@
+{
+  "description": "Spring in Paris newsletter draft",
+  "title": "Spring in Paris, on Two Wheels and Over Lunch",
+  "thumbnail": "",
+  "createdOn": "2026-04-09T15:04:00Z",
+  "updatedOn": "2026-04-09T15:04:00Z",
+  "authors": [
+    "CLAW CLAW",
+    "Dwayne"
+  ],
+  "category": "newsletter",
+  "tags": [
+    "newsletter",
+    "paris",
+    "spring"
+  ],
+  "templateContent": {
+    "body": {
+      "type": "standardPage",
+      "theme": {
+        "body": {
+          "backgroundColor": "#ffffff",
+          "backgroundImage": {
+            "url": "",
+            "repeat": "no-repeat",
+            "position": "top center"
+          }
+        },
+        "fonts": {
+          "normalFont": {
+            "family": "Helvetica, Arial, sans-serif",
+            "size": "14px"
+          }
+        }
+      },
+      "rows": [
+        {
+          "id": "header-1",
+          "type": "row",
+          "style": {
+            "backgroundColor": "#e8efe8"
+          },
+          "columns": [
+            {
+              "id": "col-1",
+              "style": {
+                "backgroundColor": "transparent",
+                "padding": "28px"
+              },
+              "contents": [
+                {
+                  "type": "text",
+                  "content": {
+                    "html": "<h1 style=\"text-align:center;margin:0;color:#234b32;\">Spring in Paris, on Two Wheels and Over Lunch</h1><p style=\"text-align:center;color:#47624f;margin-top:10px;\">A simple terrace stop, a beer with a friend, and the feeling of Paris opening back up.</p>"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "hero-1",
+          "type": "row",
+          "style": {
+            "backgroundColor": "#f8f9fa"
+          },
+          "columns": [
+            {
+              "id": "col-2",
+              "style": {
+                "backgroundColor": "transparent",
+                "padding": "20px"
+              },
+              "contents": [
+                {
+                  "type": "image",
+                  "content": {
+                    "src": "http://localhost:8080/templates/paris-patio.jpg",
+                    "alt": "Patio lunch in Paris during spring at Toussaint"
+                  },
+                  "style": {
+                    "width": "100%",
+                    "borderRadius": "10px"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "content-1",
+          "type": "row",
+          "columns": [
+            {
+              "id": "col-3",
+              "style": {
+                "backgroundColor": "transparent",
+                "padding": "24px"
+              },
+              "contents": [
+                {
+                  "type": "text",
+                  "content": {
+                    "html": "<p>Spring in Paris does something to people.</p><p>After a long winter, when the cold seems to drag on forever and the mood can feel a little heavy, the first real stretch of sun changes everything. People come out of their shell. Terraces fill up. Smiles come back. The city feels lighter, warmer, and more alive.</p><p>That feeling came through clearly during a simple bike outing and lunch with a friend. It was not a grand event, just one of those everyday moments that quietly says a lot about life here. Good weather, a casual stop for a beer, and people all around doing the same, taking a pause in the middle of the day to enjoy the season.</p>"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "content-2",
+          "type": "row",
+          "columns": [
+            {
+              "id": "col-4",
+              "style": {
+                "backgroundColor": "#f6f8f6",
+                "padding": "24px"
+              },
+              "contents": [
+                {
+                  "type": "text",
+                  "content": {
+                    "html": "<p>What stands out is not just the sunshine, but the social rhythm that returns with it. In Paris, spring is not only a change in temperature. It is a shift in energy. People gather again. Lunch stretches a little longer. Conversations open up. The city starts breathing outward instead of inward.</p><p>There is something deeply human in that. The simple act of sitting outside, sharing a drink, and enjoying unhurried time with others becomes part of what makes this season feel so rich. It is a reminder that quality of life is often built in small, repeatable moments: friendship, fresh air, movement, and time together.</p><p>A bike ride, a lunch break, a beer in the sun. On paper, it is ordinary. In Paris in spring, it feels like the city coming back to life.</p>"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "footer-1",
+          "type": "row",
+          "style": {
+            "backgroundColor": "#234b32"
+          },
+          "columns": [
+            {
+              "id": "col-5",
+              "style": {
+                "backgroundColor": "transparent",
+                "padding": "20px"
+              },
+              "contents": [
+                {
+                  "type": "text",
+                  "content": {
+                    "html": "<p style=\"text-align:center;color:#ffffff;margin:0;\">Draft prepared for BEEFree editor</p>"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
