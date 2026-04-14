@@ -1,0 +1,144 @@
+{
+  "description": "Food connection newsletter",
+  "title": "Food: What Actually Connects Us",
+  "thumbnail": "",
+  "createdOn": "2026-04-13T15:58:00Z",
+  "updatedOn": "2026-04-13T15:58:00Z",
+  "authors": ["CLAW CLAW", "Dwayne Primeau"],
+  "category": "newsletter",
+  "tags": ["newsletter", "food", "international", "connection"],
+  "templateContent": {
+    "body": {
+      "type": "standardPage",
+      "theme": {
+        "body": {
+          "backgroundColor": "#ffffff",
+          "backgroundImage": { "url": "", "repeat": "no-repeat", "position": "top center" }
+        },
+        "fonts": { "normalFont": { "family": "Georgia, Times New Roman, serif", "size": "16px" } }
+      },
+      "rows": [
+        {
+          "id": "header-1",
+          "type": "row",
+          "style": { "backgroundColor": "#f5f1ea" },
+          "columns": [{
+            "id": "col-1",
+            "style": { "backgroundColor": "transparent", "padding": "36px 28px 16px 28px" },
+            "contents": [{
+              "type": "text",
+              "content": {
+                "html": "<p style=\"text-align:center;letter-spacing:2px;text-transform:uppercase;color:#7b6a58;margin:0 0 14px 0;font-size:12px;\">Food Notes</p><h1 style=\"text-align:center;margin:0;color:#2d241d;font-size:34px;line-height:1.2;font-weight:normal;\">Food: What Actually Connects Us</h1><p style=\"text-align:center;color:#6d6257;margin:16px 0 0 0;font-size:17px;line-height:1.6;\">People don’t bond over mission statements. They bond over food.</p>"
+              }
+            }]
+          }]
+        },
+        {
+          "id": "hero-image-1",
+          "type": "row",
+          "columns": [{
+            "id": "col-2",
+            "style": { "backgroundColor": "transparent", "padding": "0" },
+            "contents": [{
+              "type": "image",
+              "content": {
+                "src": "",
+                "width": "100%",
+                "alt": "Food hero image"
+              }
+            }]
+          }]
+        },
+        {
+          "id": "body-1",
+          "type": "row",
+          "columns": [{
+            "id": "col-3",
+            "style": { "backgroundColor": "transparent", "padding": "26px 34px 18px 34px" },
+            "contents": [{
+              "type": "text",
+              "content": {
+                "html": "<p style=\"color:#3b332d;line-height:1.9;margin:0 0 22px 0;\">That’s not poetic. It’s just how it works. When you sit across from someone and share a meal, the conversation changes. You might start with the dish, but you end up in stories about family, about places they’ve lived, about what they miss. Food creates space where strangers can just talk.</p><p style=\"color:#3b332d;line-height:1.9;margin:0 0 22px 0;\">I’ve seen this everywhere. In Paris, people linger at tables for hours not because they’re hungry, but because that time matters. In Malaysia, hawker centers aren’t just places to grab dinner—they’re where languages mix, where someone’s grandmother’s recipe ends up in front of you, where you taste something new without even asking.</p>"
+              }
+            }]
+          }]
+        },
+        {
+          "id": "image-2",
+          "type": "row",
+          "columns": [{
+            "id": "col-4",
+            "style": { "backgroundColor": "transparent", "padding": "0 34px 24px 34px" },
+            "contents": [{
+              "type": "image",
+              "content": {
+                "src": "",
+                "width": "100%",
+                "alt": "Food scene"
+              }
+            }]
+          }]
+        },
+        {
+          "id": "body-2",
+          "type": "row",
+          "columns": [{
+            "id": "col-5",
+            "style": { "backgroundColor": "transparent", "padding": "0 34px 20px 34px" },
+            "contents": [{
+              "type": "text",
+              "content": {
+                "html": "<p style=\"color:#3b332d;line-height:1.9;margin:0 0 22px 0;\">The research backs this up. Social eating builds trust faster than almost anything else. There’s something simple about passing plates, about saying “you have to try this,” about sitting down instead of standing across from each other. You’re not arguing. You’re just eating.</p>"
+              }
+            }]
+          }]
+        },
+        {
+          "id": "image-3",
+          "type": "row",
+          "columns": [{
+            "id": "col-6",
+            "style": { "backgroundColor": "transparent", "padding": "0 34px 24px 34px" },
+            "contents": [{
+              "type": "image",
+              "content": {
+                "src": "",
+                "width": "100%",
+                "alt": "Sharing food"
+              }
+            }]
+          }]
+        },
+        {
+          "id": "body-3",
+          "type": "row",
+          "columns": [{
+            "id": "col-7",
+            "style": { "backgroundColor": "transparent", "padding": "0 34px 30px 34px" },
+            "contents": [{
+              "type": "text",
+              "content": {
+                "html": "<p style=\"color:#3b332d;line-height:1.9;margin:0 0 22px 0;\">Food doesn’t fix everything. It doesn’t erase history or difference. But it gives people a reason to be in the same room. It turns a stranger into someone whose food you want to try again.</p><p style=\"color:#3b332d;line-height:1.9;margin:0;\">That’s the part that sticks. A good meal isn’t just flavors. It’s a memory of who you ate it with.</p>"
+              }
+            }]
+          }]
+        },
+        {
+          "id": "footer-1",
+          "type": "row",
+          "style": { "backgroundColor": "#2d241d" },
+          "columns": [{
+            "id": "col-8",
+            "style": { "backgroundColor": "transparent", "padding": "18px 24px" },
+            "contents": [{
+              "type": "text",
+              "content": {
+                "html": "<p style=\"text-align:center;color:#f5f1ea;margin:0;font-size:13px;letter-spacing:1px;text-transform:uppercase;\">Food notes, one bite at a time</p>"
+              }
+            }]
+          }]
+        }
+      ]
+    }
+  }
+}

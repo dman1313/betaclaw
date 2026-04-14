@@ -15,3 +15,9 @@ TradingAgents/
 /home/node/.openclaw/workspace/.env.beefree
 openclaw-config-backup-*.json
 .env.secrets
+google-oauth-client.json
+openclaw-notion-second-brain
+openclaw-notion-second-brain/*
+
+# Dream system files (contain secrets)
+memory/.dreams/
